@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_id: 1
+  start_time: 2023-12-02 14:12:24
+  end_time: 2023-12-02 14:12:24
+  reservation_details: MyText
+
+two:
+  customer_id: 1
+  start_time: 2023-12-02 14:12:24
+  end_time: 2023-12-02 14:12:24
+  reservation_details: MyText

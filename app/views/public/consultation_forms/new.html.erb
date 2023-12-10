@@ -1,0 +1,21 @@
+<div class="container">
+<div class="set_center_outer">
+   <h2>相談フォーム</h2>
+   <br>
+ </div>
+ </div>
+<%= form_with model: ConsultationForm do |f| %>
+ 
+   <%= f.label :content, '相談内容*' %>
+   <%= f.text_area :content, size: '5x10', class: 'form-control' %>
+  <p></p>
+  <%= month_calendar(number_of_month: 1) do |date| %>
+  <%= date %>
+<% end %>
+ <div class="time">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time %>
+  </div>
+ <%= f.submit "入力内容確認", class: "btn btn-primary"%>
+  <% end %>
+  
