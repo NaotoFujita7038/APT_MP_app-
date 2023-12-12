@@ -2,16 +2,16 @@ Rails.application.routes.draw do
   
   
   
-  get 'review/index'
     namespace :public do
     get 'cart_items/index'
-  end
+    end
       # 顧客用
 # URL /customers/sign_in ...
 devise_for :customers, skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
 }
+
  # 管理者用
 # URL /admin/sign_in ...
 devise_for :admin,skip: [:registrations, :passwords], controllers: {
@@ -29,13 +29,14 @@ devise_for :admin,skip: [:registrations, :passwords], controllers: {
    get '/customers/check' => 'customers#check'
    patch '/customers/withdrawal' => 'customers#withdrawal' 
    get 'consultation_forms/confirm/:id', to: 'consultation_forms#confirm', as: 'confirm'
-   
+   get '/reviews/new' => 'reviews#new'
+   post '/reviews/create' => 'reviews#create' 
 
    resources :consultation_forms, only: [:new, :create]
    resources :orders, only:[:new, :index, :show, :create,]
    resources :cart_items, only:[:index, :update, :create, :destroy]
    resources :items, only: [:index, :show, ]
-   
+  
    #collection do
     #  get 'confirm_withdraw'
      # patch 'withdraw'
@@ -47,7 +48,7 @@ devise_for :admin,skip: [:registrations, :passwords], controllers: {
    get '/orders/:id' => 'orders#show'
    resources:items, only: [:create, :update, :index, :show, :edit, :new,]
    resources:customers, only: [:index, :show, :edit, :update]
-   
+  
   
    
   end

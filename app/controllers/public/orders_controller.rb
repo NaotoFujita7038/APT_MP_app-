@@ -46,7 +46,7 @@ class Public::OrdersController < ApplicationController
     redirect_to orders_thanks_path
    end
   
-  private
+  private 
   
   def order_params
     params.require(:order).permit(:name, :address, :total_price, :postal_code, :payment_method, :shipping_fee)
