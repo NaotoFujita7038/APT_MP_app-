@@ -8,6 +8,7 @@ before_action :authenticate_admin!
     @item.name
     @item.price
     @items=Item.all
+    @item=Item.page(params[:page])
   end
 
   def show

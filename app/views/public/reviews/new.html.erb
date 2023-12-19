@@ -4,10 +4,25 @@
    <br>
  </div>
  </div>
-<%= form_with model: @Review do |f| %>
-   <%=@review.customer_id%>
+<%= form_with model: @review , url: reviews_create_path do |f| %>
+   
   <%= f.label :review_comment, 'レビューコメント内容*' %>
   <%= f.text_area :review_comment, size: '5x10', class: 'form-control' %>
+  
+  <div class="field" id="star">
+  <%= f.label :star, "星評価：" %>
+  <%= f.hidden_field :star, id: :review_star %>
+  <script>
+    console.log("raty")
+   const opt =({
+      size     : 36,
+      starOff:  '<%=  "/assets/star-off.png"  %>',
+      starOn : '<%=  "/assets/star-on.png"  %>',
+      scoreName: 'review[star]',   // evaluationカラムへの保存
+    });
+    raty(document.querySelector("#star"),opt)
+  </script>
+</div>
   
   <p></p>
  <%= f.submit "送信", class: "btn btn-primary"%>

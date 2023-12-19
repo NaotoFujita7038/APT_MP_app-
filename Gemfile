@@ -59,3 +59,5 @@ gem 'devise'
 gem "enum_help"
 gem 'carrierwave'
 gem "simple_calendar", "~> 2.4"
+gem 'kaminari','~> 1.2.1'
+gem 'jquery-rails'

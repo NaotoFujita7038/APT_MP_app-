@@ -29,8 +29,9 @@ devise_for :admin,skip: [:registrations, :passwords], controllers: {
    get '/customers/check' => 'customers#check'
    patch '/customers/withdrawal' => 'customers#withdrawal' 
    get 'consultation_forms/confirm/:id', to: 'consultation_forms#confirm', as: 'confirm'
-   get '/reviews/new' => 'reviews#new'
-   post '/reviews/create' => 'reviews#create' 
+   get '/reviews/new' =>'reviews#new'
+   get '/reviews/:id' =>'reviews#show', as: 'review_show'
+   post '/reviews/create' =>'reviews#create' 
 
    resources :consultation_forms, only: [:new, :create]
    resources :orders, only:[:new, :index, :show, :create,]

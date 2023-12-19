@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_12_023929) do
+ActiveRecord::Schema.define(version: 2023_12_19_103205) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 2023_12_12_023929) do
 
   create_table "consultation_forms", force: :cascade do |t|
     t.integer "customer_id"
-    t.string "form"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -128,7 +127,6 @@ ActiveRecord::Schema.define(version: 2023_12_12_023929) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "customer_id"
-    t.integer "rating"
     t.text "review_comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

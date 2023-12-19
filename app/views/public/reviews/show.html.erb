@@ -1,0 +1,29 @@
+<h1>Reviews</h1>
+<table>
+  <thead>
+    <tr>
+      <th>星評価</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @review.review_comment %></td>
+        <td><div class="field" id="star" data-score="<%= @review.star %>"></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+<script>
+  console.log("raty")
+  const opt =({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    size     : 36,
+    starOff:  '<%=  "/assets/star-off.png"  %>',
+    starOn : '<%=  "/assets/star-on.png"  %>',
+    scoreName: 'review[star]',   // evaluationカラムへの保存
+  });
+  raty(document.querySelector("#star"),opt)
+</script>
