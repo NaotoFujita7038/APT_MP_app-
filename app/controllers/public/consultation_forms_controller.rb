@@ -14,16 +14,7 @@ class Public::ConsultationFormsController < ApplicationController
       render :confirm
   end
 
-def update
-    @consultation_form=ConsultationForm.find(params)
-if  @consultation_form=ConsultationForm.update(consultation_form_params)
-    flash[:notice] = "successfully"
-    redirect_to items_path(@item.id)
-else
-       flash[:notice] = "error"     
-       render :edit
-end
-end
+
   # 実際に送信するアクションになります。
   # ここで初めて入力内容を保存します。
   # セキュリティーのためにも一定時間で入力内容の削除を行ってもいいかもしれません。

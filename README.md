@@ -39,8 +39,11 @@ A place that moves pepleの頭文字から取りました。
 - IDE：Cloud9
 ​
 ## 使用素材
-- 画像素材「使用検討中」
+- 画像素材
+- https://piclike.net/machine/3736.html
+- https://sozaizchi.com/sozai/illust/mobile/03.html
+- https://github.com/wbotelhos/raty/tree/main/src/images
 - アプリケーションの実装に使用したgem/bootstrapのリファレンスなどの記載は不要です。
-- 使用しない場合は、使用素材の項目をREADMEから削除してください。
+
 折りたたむ
 
