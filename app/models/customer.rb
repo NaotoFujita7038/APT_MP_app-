@@ -5,7 +5,7 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :cart_items
          has_many :contents
-         belongs_to :review
+         belongs_to :review, optional: true
            has_many :orders
   def full_name
     self.last_name + " " + self.first_name
