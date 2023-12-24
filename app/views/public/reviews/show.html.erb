@@ -14,6 +14,7 @@
   </tbody>
 </table>
 <script>
+window.addEventListener('turbolinks:load',()=>{
   console.log("raty")
   const opt =({
     readOnly: true,
@@ -26,4 +27,5 @@
     scoreName: 'review[star]',   // evaluationカラムへの保存
   });
   raty(document.querySelector("#star"),opt)
+});
 </script>
